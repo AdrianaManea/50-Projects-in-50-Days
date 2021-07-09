@@ -4,6 +4,9 @@
   --bg-color: rgba(0, 0, 0, 0.4);
   --left-btn-hover-color: rgb(196, 15, 45);
   --right-btn-hover-color: rgb(54, 173, 47, 1);
+  --hover-width: 75%;
+  --remaining-width: 25%;
+  --speed: 2000ms;
 }
 
 * {
@@ -76,7 +79,7 @@ h1 {
   background: url('https://images.unsplash.com/photo-1607853202273-797f1c22a38e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
 }
 
 .split.left::before {
@@ -93,7 +96,7 @@ h1 {
   background: url('https://images.unsplash.com/photo-1597872200969-2b65d56bd16b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80');
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom;
+  background-position: center;
 }
 
 .split.right::before {
@@ -102,4 +105,39 @@ h1 {
   width: 100%;
   height: 100%;
   background-color: var(--bg-color);
+}
+
+.split.right,
+.split.left,
+.split.right::before,
+.split.left::before {
+  transition: all var(--speed) ease-in-out;
+}
+
+.hover-left .left {
+  width: var(--hover-width);
+}
+
+.hover-left .right {
+  width: var(--remaining-width);
+}
+
+.hover-right .right {
+  width: var(--hover-width);
+}
+
+.hover-right .left {
+  width: var(--remaining-width);
+}
+
+@media(max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
 }
