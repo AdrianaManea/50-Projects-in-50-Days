@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Uchen:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to right, #16184b, #353ab5);
+  font-family: 'Uchen', sans-serif;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.btn {
+  background-color: #184b16;
+  border-radius: 5px;
+  border: none;
+  color: #fff;
+  margin: 1rem;
+  padding: 1.5rem 3rem;
+  font-size: 1.2rem;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: transparent;
+  border: solid 1px #fff;
+  transition: background-color 500ms ease-in-out;
+}
+
+.btn:focus {
+  outline: none;
+}
