@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgba(1, 50, 32, 0.9);
+  color: #111;
+}
+
+h1 {
+  margin: 5px 0;
+}
+
+.faq-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.faq {
+  background-color: #013220;
+  color: #a9a9a9;
+  border: 1px solid #a9a9a9;
+  border-radius: 10px;
+  margin: 20px 0;
+  padding: 30px;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.faq.active {
+  background-color: #a9a9a9;
+  color: #333;
+  box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
+  border: 0;
+}
+
+.faq.active::before,
+.faq.active::after {
+  content: '\f075';
+  font-family: 'Font Awesome 5 Free';
+  position: absolute;
+  color: #138808;
+  font-size: 5rem;
+  opacity: 0.4;
+  top: -8px;
+  left: 8px;
+  z-index: 0;
+}
+
+.faq.active::before {
+  color: #5a4fcf;
+  top: 10px;
+  left: 50px;
+  z-index: 0;
+  transform: rotateY(180deg);
+}
+
+/* .faq.active h3 {
+  margin-top: 0;
+}
+
+.faq-comment-btn {
+  background-color: transparent;
+  border: none;
+}
+
+.faq-1 {
+  position: absolute;
+  color: #138808;
+  font-size: 7rem;
+  opacity: 0.5;
+  top: 10px;
+  left: 20px;
+}
+
+.faq-2 {
+  position: absolute;
+  color: #5a4fcf;
+  font-size: 7rem;
+  opacity: 0.5;
+  top: -10px;
+  left: -20px;
+} */
+
+.faq-title {
+  margin: 0 35px 0 0;
+}
+
+.faq-text {
+  display: none;
+  margin: 30px 0 0;
+}
+
+.faq.active .faq-text {
+  display: block;
+}
