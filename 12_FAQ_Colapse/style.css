@@ -11,7 +11,8 @@ body {
 }
 
 h1 {
-  margin: 5px 0;
+  margin: 45px 0;
+  text-align: center;
 }
 
 .faq-container {
@@ -28,8 +29,8 @@ h1 {
   padding: 30px;
   position: relative;
   overflow: hidden;
-  transition: 0.3s ease;
   z-index: 1;
+  transition: 0.3s ease-in-out;
 }
 
 .faq.active {
