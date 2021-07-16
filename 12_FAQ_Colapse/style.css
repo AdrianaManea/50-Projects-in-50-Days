@@ -29,6 +29,7 @@ h1 {
   position: relative;
   overflow: hidden;
   transition: 0.3s ease;
+  z-index: 1;
 }
 
 .faq.active {
@@ -46,16 +47,15 @@ h1 {
   color: #138808;
   font-size: 5rem;
   opacity: 0.4;
-  top: -8px;
-  left: 8px;
-  z-index: 0;
+  top: -10px;
+  left: 5px;
+  z-index: -1;
 }
 
 .faq.active::before {
   color: #5a4fcf;
-  top: 10px;
-  left: 50px;
-  z-index: 0;
+  top: 5px;
+  left: 40px;
   transform: rotateY(180deg);
 }
 
@@ -75,6 +75,7 @@ h1 {
   opacity: 0.5;
   top: 10px;
   left: 20px;
+  z-index: -1;
 }
 
 .faq-2 {
@@ -84,6 +85,7 @@ h1 {
   opacity: 0.5;
   top: -10px;
   left: -20px;
+  z-index: -1;
 } */
 
 .faq-title {
@@ -97,4 +99,8 @@ h1 {
 
 .faq.active .faq-text {
   display: block;
+}
+
+.faq-toggle {
+  margin-top: 16px;
 }
