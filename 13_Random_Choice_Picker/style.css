@@ -13,6 +13,7 @@ body {
   align-items: center;
   justify-content: center;
   min-height: 100vh;
+  min-width: 100vw;
   overflow: hidden;
   margin: 0;
   z-index: 1;
@@ -87,7 +88,7 @@ span.choices {
 }
 
 .container {
-  max-width: 700px;
+  width: 70vw;
 }
 
 textarea {
@@ -111,7 +112,7 @@ textarea:disabled {
   color: #fff;
   border-radius: 5px;
   padding: 10px 20px;
-  margin: 0 15px 10px 0;
+  margin: 10px 15px 10px 0;
   font-size: 12px;
   font-weight: 700;
   display: inline-block;
@@ -119,4 +120,24 @@ textarea:disabled {
 
 .tag.highlight {
   background: #d3003f;
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    width: 85vw;
+  }
+
+  .tag {
+    margin: 0px 15px 10px 0;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h3 {
+    font-size: 16px;
+  }
+
+  .tag {
+    padding: 5px 10px;
+  }
 }

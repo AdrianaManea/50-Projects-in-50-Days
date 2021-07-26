@@ -10,7 +10,8 @@ textarea.addEventListener('keyup', (e) => {
 
   // When press Enter, do this
   // console.log(tags.childElementCount);
-  if (e.key === 'Enter' && tags.childElementCount > 1) {
+  if (e.key === 'Enter' && tags.childElementCount !== 0) {
+    // Clear input
     setTimeout(() => {
       e.target.value = '';
       textarea.disabled = true;
@@ -20,11 +21,16 @@ textarea.addEventListener('keyup', (e) => {
   }
 });
 
+
+// Create tags
 function createTags(input) {
   // console.log(input);
 
-  // With map() we trim the input when it contains blanks and characters.
-  // With filter() we filter out the entries that have just blanks.
+  // .split() - by the comma
+  // .filter() - return certain things based on a conditional
+  // .trim() - trim out any white space
+  // .map() - creates a new array populated with the results of calling a provided function on every element in the calling array. (manipulate the array)
+
   // Take whatever we type in and then we put a comma, we want to split at that comma and create an array of whatever is between either side of these comma's 
 
   const tags = input.split(',').filter(tag => tag.trim() !== '').map(tag => tag.trim());
@@ -41,6 +47,7 @@ function createTags(input) {
   });
 }
 
+// Create randomSelect
 function randomSelect() {
   const times = 30;
 
@@ -53,10 +60,9 @@ function randomSelect() {
     setTimeout(() => {
       unHighlightTag(randomTag);
     }, 100);
-
   }, 100);
 
-  // Stop and pick a randomTag to land on and highLightTag
+  // Stop and pickRandomTag to land on and add highLightTag
   setTimeout(() => {
     clearInterval(interval);
 
@@ -65,21 +71,26 @@ function randomSelect() {
 
       highlightTag(randomTag);
       textarea.disabled = false;
+      textarea.focus();
     }, 100);
   }, times * 100);
 }
 
+
+// Create pickRandomTag
 function pickRandomTag() {
   const tags = document.querySelectorAll('.tag');
 
-  // Random tag
-  // When we use querySelectorAll we bring in a NodeList, which is similar to an array with an index. The index will be random. So Math.floor() to round down Math.random() which we want to multiply it with the length of the tags nodeList which is similar with an array
+  // randomTag
+  // When we use querySelectorAll we bring in a NodeList, which is similar to an array with an index. The index will be random. So Math.floor() to round down, Math.random() which we want to multiply it with the length of the tags nodeList which is similar with an array
   return tags[Math.floor(Math.random() * tags.length)];
 }
+
 
 function highlightTag(tag) {
   tag.classList.add('highlight');
 }
+
 
 function unHighlightTag(tag) {
   tag.classList.remove('highlight');
