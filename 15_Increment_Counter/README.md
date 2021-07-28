@@ -1,0 +1,3 @@
+- when we come to this iste initially it counts from 0 up
+- whatever the increment is, we can set it to whatever we would like to make it faster or slower
+- responsive
