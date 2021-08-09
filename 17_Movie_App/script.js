@@ -30,7 +30,7 @@ function showMovies(movies) {
   main.innerHTML = '';
 
   movies.forEach((movie) => {
-    // console.log(movie);
+    console.log(movie);
     const {
       title,
       poster_path,

@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap');
 
 :root {
-  /* --primary-color: #1b1500; */
   --primary-color: #171010;
   --secondary-color: #362222;
   --tertiary-color: #bd6a65;
@@ -24,6 +23,27 @@ header {
   background-color: var(--secondary-color);
 }
 
+header::before {
+  content: '\f3ff';
+  font-family: 'FontAwesome';
+  position: absolute;
+  top: 15px;
+  left: 150px;
+  font-size: 35px;
+  color: var(--tertiary-color);
+  cursor: pointer;
+  z-index: 1;
+  transform: rotate(-30deg);
+}
+
+header h1 {
+  position: absolute;
+  color: #fff;
+  left: 200px;
+  margin-top: -1px;
+  cursor: pointer;
+}
+
 .search {
   background-color: transparent;
   color: #fff;
@@ -32,7 +52,7 @@ header {
   font-family: inherit;
   font-size: 16px;
   padding: 6px 10px;
-  translate: transform .3s ease-in-out;
+  translate: transform .5s ease-in;
 }
 
 .search::placeholder {
@@ -97,7 +117,7 @@ main {
 }
 
 .overview {
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.9);
   padding: 32px;
   position: absolute;
   left: 0;
