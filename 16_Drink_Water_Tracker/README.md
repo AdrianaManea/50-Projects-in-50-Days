@@ -10,5 +10,5 @@
 
 - smallCups
   - clicking on a smallCups is going to highlight/fill all the cups until and including the clicked one
-  - clicking on the last filled smallCups has a toggle behaviour (turns .full on/off)
+  - clicking on the last filled smallCups has a toggle behaviour (turns .fill on/off)
     toogle the last cup when click on it
