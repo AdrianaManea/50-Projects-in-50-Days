@@ -72,7 +72,7 @@ function getClassByRate(vote) {
 }
 
 const refreshBtnVisibility = () => {
-  if (document.documentElement.scrollTop <= 1200) {
+  if (document.documentElement.scrollTop <= 400) {
     scrollBtn.style.display = 'none';
   } else {
     scrollBtn.style.display = 'block';
