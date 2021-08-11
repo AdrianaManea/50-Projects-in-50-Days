@@ -2,7 +2,7 @@
 
 - UI - html &css
   - hover effect to see Overview of each movie
-  - rating based on what rsting it has
+  - rating colors based on what rating it has
     - above 8 - green
     - between 5 and 8 - blue
     - below 5 - red

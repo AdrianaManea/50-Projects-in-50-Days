@@ -6,9 +6,11 @@ const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
 
 const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=1f31ba03bb5004e83f0d6c13f4e16759&query="';
 
-const main = document.getElementById('main');
 const form = document.getElementById('form');
 const search = document.getElementById('search');
+const main = document.getElementById('main');
+const scrollBtn = document.getElementById("scroll-btn");
+
 
 // Get initial Movies
 getMovies(API_URL);
@@ -30,7 +32,7 @@ function showMovies(movies) {
   main.innerHTML = '';
 
   movies.forEach((movie) => {
-    console.log(movie);
+    // console.log(movie);
     const {
       title,
       poster_path,
@@ -69,6 +71,15 @@ function getClassByRate(vote) {
   }
 }
 
+const refreshBtnVisibility = () => {
+  if (document.documentElement.scrollTop <= 1200) {
+    scrollBtn.style.display = 'none';
+  } else {
+    scrollBtn.style.display = 'block';
+  }
+};
+
+refreshBtnVisibility();
 
 // Event Listener
 form.addEventListener('submit', (e) => {
@@ -83,4 +94,14 @@ form.addEventListener('submit', (e) => {
   } else {
     window.location.reload();
   }
+});
+
+scrollBtn.addEventListener('click', () => {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
+
+document.addEventListener('scroll', (e) => {
+  refreshBtnVisibility();
+  console.log(e);
 });
