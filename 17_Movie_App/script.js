@@ -9,7 +9,7 @@ const SEARCH_API = 'https://api.themoviedb.org/3/search/movie?api_key=1f31ba03bb
 const form = document.getElementById('form');
 const search = document.getElementById('search');
 const main = document.getElementById('main');
-const scrollBtn = document.getElementById("scroll-btn");
+const scrollBtn = document.getElementById('scroll-btn');
 
 
 // Get initial Movies
@@ -27,8 +27,7 @@ async function getMovies(url) {
 
 // Show Movies
 function showMovies(movies) {
-  // 1 clean main
-  // we're going to initially list movies but when we search we want to replace them
+
   main.innerHTML = '';
 
   movies.forEach((movie) => {
@@ -51,13 +50,38 @@ function showMovies(movies) {
   
     <div class="overview">
       <h3>Overview</h3>
-      ${overview}
+      <p id="overview-test">${overview}</p>
     </div>
     `;
 
-    main.appendChild(movieEl);
-  });
+    // console.log(overview.split(" ").length);
 
+    const tests = document.querySelectorAll('#overview-test');
+    // console.log(tests);
+
+    tests.forEach((test) => {
+      // console.log(test.innerHTML.split(' ').length);
+      // console.log(test);
+
+      if (test.innerText.split(' ').length <= 20) {
+        test.style.overflow = 'hidden';
+        test.style.height = '100px';
+        test.style.color = 'blue';
+      } else if ((test.innerText.split(' ').length > 20) && test.innerText.split(' ').length <= 55) {
+        test.style.overflowY = 'scroll';
+        test.style.height = '200px';
+        test.style.color = 'green';
+      } else {
+        test.style.overflowY = 'scroll';
+        test.style.height = '300px';
+        test.style.color = 'red';
+      }
+    });
+
+    // console.log(movieEl);
+    main.appendChild(movieEl);
+
+  });
 }
 
 // Utility function
@@ -103,5 +127,5 @@ scrollBtn.addEventListener('click', () => {
 
 document.addEventListener('scroll', (e) => {
   refreshBtnVisibility();
-  console.log(e);
+  // console.log(e);
 });
