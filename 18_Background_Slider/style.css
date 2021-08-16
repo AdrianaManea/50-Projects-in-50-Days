@@ -13,7 +13,7 @@ body {
   height: 100vh;
   overflow: hidden;
   margin: 0;
-  background-image: url(/18_Background_Slider/img/a.jpg);
+  /* background-image: url(/18_Background_Slider/img/a.jpg); */
   background-position: center;
   background-size: cover;
   transition: 0.4s ease;
