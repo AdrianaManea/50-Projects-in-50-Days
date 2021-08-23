@@ -14,7 +14,7 @@ const months = ["January", "February", "March", "April", "May", "June", "July",
 ];
 
 // Dark Mode
-toggleEl.addEventListener('click', (e) => {
+toggleEl.addEventListener('click', function (e) {
   const html = document.querySelector('html');
   // console.log(e.target);
 
@@ -25,6 +25,24 @@ toggleEl.addEventListener('click', (e) => {
     html.classList.add('dark');
     e.target.innerHTML = 'Light mode';
   }
+
+  const x = e.clientX;
+  const y = e.clientY;
+
+  const buttonTop = e.target.offsetTop;
+  const buttonLeft = e.target.offsetLeft;
+
+  const xInside = x - buttonLeft;
+  const yInside = y - buttonTop;
+
+  const circle = document.createElement('span');
+  circle.classList.add('circle');
+  circle.style.top = yInside + 'px';
+  circle.style.left = xInside + 'px';
+
+  this.appendChild(circle);
+
+  setTimeout(() => circle.remove(), 500);
 });
 
 function setTime() {
