@@ -1,4 +1,4 @@
-(How_to_build_Sortable_Drag&Drop_with_JS_WebDevSimplified)[https://www.youtube.com/watch?v=jfYWwQrtzzY]
+[How_to_build_Sortable_Drag&Drop_with_JS_WebDevSimplified](https://www.youtube.com/watch?v=jfYWwQrtzzY)
 
 - draggable='true'
 - .draggable class - cursor: move;
