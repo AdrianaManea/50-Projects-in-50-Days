@@ -13,7 +13,7 @@ body {
 
 .slider-container {
   position: relative;
-  /* overflow: hidden; */
+  overflow: hidden;
   width: 100vw;
   height: 100vh;
 }
@@ -24,6 +24,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  transition: transform .5s ease-in-out;
 }
 
 .left-slide>div {
@@ -48,6 +49,7 @@ body {
   top: 0;
   left: 35%;
   width: 65%;
+  transition: transform .5s ease-in-out;
 }
 
 .right-slide>div {
@@ -69,6 +71,7 @@ button {
 
 button:hover {
   color: #222;
+  border: solid 2px #222;
 }
 
 button:focus {
