@@ -71,7 +71,7 @@ button {
 
 button:hover {
   color: #222;
-  border: solid 2px #222;
+  /* border: solid 2px #222; */
 }
 
 button:focus {
