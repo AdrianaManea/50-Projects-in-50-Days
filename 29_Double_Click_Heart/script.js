@@ -32,8 +32,8 @@ const createHeart = (e) => {
   const y = e.clientY;
   // console.log(x, y);
 
-  const leftOffset = e.target.offsetLeft;
-  const topOffset = e.target.offsetTop;
+  const leftOffset = loveMe.offsetLeft;
+  const topOffset = loveMe.offsetTop;
 
   const xInside = x - leftOffset;
   const yInside = y - topOffset;
