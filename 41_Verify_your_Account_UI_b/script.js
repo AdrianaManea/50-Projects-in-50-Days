@@ -43,7 +43,8 @@ function getValues() {
 
   let array = [cod1, cod2, cod3, cod4, cod5, cod6];
 
-  let total = array.filter(Boolean).length;
+  // https://michaeluloth.com/filter-boolean
+  let total = array.filter(item => Boolean(item)).length;
   console.log(total);
 
   if (total == 6) {
