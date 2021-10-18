@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test</title>
+</head>
+
+<body>
+
+  <!-- [Browse Events](https://javascript.info/introduction-browser-events) -->
+
+
+  <!-- <input id="elem" type="button" value="Click me"> -->
+
+  <button id="elem">Click me</button>
+
+  <script>
+    // Multiple calls to "addEventListener" allow to add multiple handlers
+    // function handler1() {
+    //   alert('Thanks!');
+    // };
+
+    // function handler2() {
+    //   alert('Thanks again!');
+    // }
+    // elem.onclick = () => alert("Hello");
+    // elem.addEventListener("click", handler1); // Thanks!
+    // elem.addEventListener("click", handler2); // Thanks again!
+
+    // elem.onclick = function (event) {
+    //   // show event type, element and coordinates of the click
+    //   alert(event.type + " at " + event.currentTarget);
+    //   alert("Coordinates: " + event.clientX + ":" + event.clientY);
+    // };
+
+    // let obj = {
+    //   handleEvent(event) {
+    //     alert(event.type + " at " + event.currentTarget);
+    //   }
+    // };
+    // elem.addEventListener('click', obj);
+
+
+    // class Menu {
+    //   handleEvent(event) {
+    //     switch (event.type) {
+    //       case 'mousedown':
+    //         elem.innerHTML = "Mouse button pressed";
+    //         break;
+    //       case 'mouseup':
+    //         elem.innerHTML += "...and released.";
+    //         break;
+    //     }
+    //   }
+    // }
+
+    // let menu = new Menu();
+    // elem.addEventListener('mousedown', menu);
+    // elem.addEventListener('mouseup', menu);
+
+    class Menu {
+      handleEvent(event) {
+        // mousedown -> onMousedown
+        let method = 'on' + event.type[0].toUpperCase() + event.type.slice(1);
+        this[method](event);
+      }
+
+      onMousedown() {
+        elem.innerHTML = "Mouse button pressed";
+      }
+
+      onMouseup() {
+        elem.innerHTML += "...and released.";
+      }
+    }
+
+    let menu = new Menu();
+    elem.addEventListener('mousedown', menu);
+    elem.addEventListener('mouseup', menu);
+  </script>
+
+</body>
+
+</html>
