@@ -1,2 +1,2 @@
-[The Doc Logo](https://twitter.com/drdisrespect/status/1050798988964712448/photo/1)
-[Chmapions Club](https://championsclub.gg/)
+- [The Doc Logo](https://twitter.com/drdisrespect/status/1050798988964712448/photo/1)
+- [Champions Club](https://championsclub.gg/)
