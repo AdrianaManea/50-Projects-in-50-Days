@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #0A4312;
+  font-family: 'Press Start 2P', sans-serif;
+  height: 100vh;
+  margin: 0;
+  text-align: center;
+}
+
+a {
+  color: #fff;
+}
+
+h1 {
+  line-height: 1.4;
+}
+
+.btn {
+  border: 0;
+  background-color: #fff;
+  color: #0A4312;
+  padding: 15px 20px;
+  font-family: inherit;
+  cursor: pointer;
+  opacity: 0.9;
+  transition: transform 0.2s, opacity 0.1s;
+}
+
+.btn:focus {
+  outline: transparent;
+  transform: scale(0.95);
+  opacity: 0.7;
+}
+
+.btn:hover {
+  opacity: 0.7;
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.screen.up {
+  margin-top: -100vh;
+}
+
+.purrr-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style-type: none;
+  padding: 0;
+}
+
+.purrr-list li {
+  margin: 15px;
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.6);
+}
+
+.choose-purrr-btn {
+  background-color: transparent;
+  border: 2px solid #0A4312;
+  color: #fff;
+  cursor: pointer;
+  font-family: inherit;
+  width: 150px;
+  height: 150px;
+  transition: background-color 0.3s;
+}
+
+.choose-purrr-btn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: #158625;
+}
+
+.choose-purrr-btn:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+.choose-purrr-btn img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.game-container {
+  position: relative;
+}
+
+.time,
+.score {
+  position: absolute;
+  top: 40px;
+}
+
+.time {
+  left: 40px;
+}
+
+.score {
+  right: 40px;
+}
+
+.message {
+  line-height: 1.7;
+  background-color: rgba(0, 0, 0, 0.35);
+  color: rgba(255, 255, 255, 0.7);
+  width: 100%;
+  padding: 20px;
+  z-index: 100;
+  text-align: center;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  transition: transform 0.4s ease-in, opacity 0.4s ease-in;
+}
+
+.message.visible {
+  transform: translate(-50%, 150%);
+  opacity: 1;
+}
+
+.purrr {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s ease-out;
+  /* top: 400px;
+  left: 600px; */
+}
+
+.purrr.pet {
+  transform: translate(-50%, -50%) scale(0);
+}
+
+.purrr img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
